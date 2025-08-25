@@ -1,0 +1,511 @@
+/* 1. RESET & BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  background-image: url(Person\ using\ phone.jpg);
+  background-position: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* 2. LAYOUT & TYPOGRAPHY VARIABLES */
+:root {
+  --primary-color: #00d084;
+  --dark-bg: #0a0a23;
+  --light-overlay: rgba(255, 255, 255, 0.85);
+  --transition-speed: 0.3s;
+}
+
+/* 3. HEADER & NAVIGATION */
+header {
+  background-color: var(--dark-bg);
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #21b54b;
+}
+
+.navigation ul {
+  display: flex;
+  gap: 1rem;
+  transition: max-height 0.4s cubic-bezier(.4,0,.2,1), opacity 0.4s;
+  max-height: 100px;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.navigation ul li a {
+  font-weight: 500;
+  transition: color var(--transition-speed) ease;
+}
+
+.navigation ul li a:hover {
+  color: #0d0d9b;
+}
+
+.get-start {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.get-start .EN {
+  font-weight: bold;
+}
+
+.get-start button {
+  background-color: #21b54b;
+  color: #034353;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.get-start button:hover {
+  background-color: #0c7c53;
+  transform: scale(1.05);
+}
+
+/* Hamburger Toggle (Mobile) */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navigation ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .navigation ul.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .get-start {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .navigation ul {
+    display: flex !important;
+    max-height: none !important;
+    opacity: 1 !important;
+    position: static !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* 4. MAIN SECTION & TRANSPARENT BACKGROUND */
+main {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  background-image: url('Person\ using\ phone.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--light-overlay);
+  z-index: -1;
+}
+
+/* 5. HERO SECTION */
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #e0f7f4, #ffffff);
+  position: relative;
+  overflow: hidden;
+}
+
+.main-hero {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-content {
+  flex: 1 1 500px;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.text-content .trusted {
+  font-size: 1rem;
+  color: #555;
+}
+
+.million {
+  font-weight: bold;
+  color: #049c64;
+}
+
+.text-content h1 {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+.hash-tag {
+  color: #00a86b;
+}
+
+.Discover {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 500px;
+  align-items: normal;
+  text-decoration-color: #0a0a23;
+}
+
+.image-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.image-container img {
+  border-radius: 10px;
+}
+
+/* 6. SUKHA SECTION */
+.Sukha {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background-color: #fff;
+  gap: 2rem;
+}
+
+.Sukha-img img {
+  border-radius: 10px;
+}
+
+.Sukha-text {
+  flex: 1;
+}
+
+.Sukha-text h2 {
+  color: var(--dark-bg);
+  margin-bottom: 1rem;
+}
+
+.Sukha-text button {
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.Sukha-text button:hover {
+  background-color: #00a86b;
+  transform: scale(1.05);
+}
+
+/* 7. BENEFITS SECTION */
+.BENEFIT {
+  background-color: #f0f0f0;
+  padding: 2rem;
+}
+
+.benefit-logo {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.runner-container {
+  text-align: center;
+}
+
+.run-1 h3,
+.run-2 h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.App-logo {
+  margin-top: 1rem;
+}
+
+.App-logo button {
+  background-color: var(--dark-bg);
+  color: #e7dada;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.App-logo button:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+.benefits-main {
+  opacity: 0;
+  transform: translateY(60px);
+  animation: benefitFadeIn 1.2s ease-out forwards;
+}
+
+@keyframes benefitFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 8. SUPPORT SECTION */
+.Support {
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.Support-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.question {
+  flex: 1;
+}
+
+.question h2 {
+  color: var(--dark-bg);
+}
+
+.Help {
+  flex: 1;
+}
+
+.Help .Title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.Help ul li {
+  margin: 0.3rem 0;
+}
+
+.Conclution {
+  margin-top: 2rem;
+}
+
+.Conclution h2 {
+  color: var(--dark-bg);
+}
+
+.Conclution img {
+  margin-top: 1rem;
+  max-width: 100%;
+}
+
+/* 9. FOOTER */
+footer {
+  background-color: var(--dark-bg);
+  color: #fff;
+  padding: 2rem;
+}
+
+.footer.flex-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+  transition: grid-template-columns 0.3s;
+}
+
+.sitemap ul li,
+.Social ul li {
+  margin: 0.5rem 0;
+}
+
+.Subscribe input {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.Subscribe button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.Subscribe button:hover {
+  background-color: #00a86b;
+  transform: scale(1.05);
+}
+
+footer img {
+  margin-top: 1rem;
+  width: 40px;
+}
+
+.copyright.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* 10. BUTTON HOVER EFFECT (GLOBAL) */
+button:hover {
+  transition: all var(--transition-speed) ease;
+}
+
+/* 11. ANIMATIONS (Fade-in on Scroll) */
+/* Section Animation */
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s cubic-bezier(.4,0,.2,1) forwards;
+}
+
+section:nth-of-type(1) { animation-delay: 0.2s; }
+section:nth-of-type(2) { animation-delay: 0.4s; }
+section:nth-of-type(3) { animation-delay: 0.6s; }
+section:nth-of-type(4) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 12. GLOBAL RESPONSIVENESS */
+@media (max-width: 768px) {
+  main {
+    background-position: top center;
+    background-size: contain;
+    padding: 1rem;
+  }
+  main::before {
+    background: rgba(255, 255, 255, 0.95);
+  }
+  .navigation ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .image-container {
+    flex-direction: column;
+  }
+  .Support-div,
+  .footer {
+    flex-direction: column;
+  }
+  .footer.flex-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .copyright.flex-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .navigation ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .image-container {
+    flex-direction: column;
+  }
+  .Support-div,
+  .footer {
+    flex-direction: column;
+  }
+  .footer.flex-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .copyright.flex-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
