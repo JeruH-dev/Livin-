@@ -6,41 +6,46 @@
     <title>Livin'</title>
     <link rel="stylesheet" href="style.css"/>
     <link rel="icon" href="app logo.jpeg" type="image/x-icon">
-    <link rel="Javascript" href="script.js">
 </head>
-
 
 <body>
     <header>
         <nav class="navigation">
             <h1 class="logo">Livin'</h1>
-            <button id="menu-toggle">☰</button>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation">☰</button>
             <ul>
-                <li> <a href="#index.html">Home</a></li>
+                <li> <a href="#Home">Home</a></li>
                 <li> <a href="#Features">Features</a></li>
                 <li> <a href="#Sukha">Sukha</a></li>
                 <li> <a href="#Benefit">Benefit</a></li>
                 <li> <a href="#Support">Support</a></li>
             </ul>
             <div class="get-start">
-                <p class="EN">EN</p>
-                <button>Download</button>
+                <div class="language-select">
+                    <button id="language-btn" aria-label="Switch language">EN ▼</button>
+                    <ul id="language-list" class="language-list" style="display:none;">
+                        <li><button data-lang="en">English</button></li>
+                        <li><button data-lang="fr">Français</button></li>
+                        <li><button data-lang="es">Español</button></li>
+                        <li><button data-lang="de">Deutsch</button></li>
+                        <li><button data-lang="zh">中文</button></li>
+                    </ul>
+                </div>
+                <button aria-label="Download Livin' app">Download</button>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero" id="Home">
             <div class="main-hero">
                 <div class="text-content">
-                    <p class="trusted" Trusted by over <span class="million"> Trusted by over 20 million Africans</span></p>
-                    <h1>Livin' by Gideon <span class="hash-tag">
-                    <p>#</span>BeyondsuperApp</h1>
-                    <p class="Discover">Welcome to Livin' Mobile Banking
-                    ...where banking meets convenience! With Livin', you can manage your finances on-the-go, anytime, anywhere. Our secure and user-friendly platform allows you to:</p>
+                    <p class="trusted">Trusted by over <span class="million">20 million Africans</span></p>
+                    <h1 class="headline">Livin' by Gideon <span class="hash-tag">#BeyondsuperApp</span></h1>
+                    <p class="Discover">Welcome to Livin' Mobile Banking ...where banking meets convenience! With Livin', you can manage your finances on-the-go, anytime, anywhere. Our secure and user-friendly platform allows you to:</p>
                 <div class="image-container">
-                        <img src="app logo.jpeg" alt="App-logo" width="150px">
-                    <ul>
+                        <img src="app logo.jpeg" alt="App-logo" width="70px" height="70px">
+                    <ul class="features-list">
                         <li>Check balances and transaction history</li>
                         <li>Transfer funds and pay bills</li>
                         <li>Deposit checks and manage accounts</li>
@@ -50,26 +55,23 @@
                 </div>
             </div>
         </section>
-        <section class="Sukha">
+        <section class="Sukha" id="Sukha">
             <div class="Sukha-img">
                 <img src="ghen-mar-cuano-R6dSBkz32B8-unsplash.jpg" alt="Young woman sitting outdoors on concrete steps, holding a smartphone in one hand and gesturing with the other. She wears a white blouse and a wristwatch, with greenery and metal railings in the background. The atmosphere is casual and focused." width="200px">
             </div>
             <div class="Sukha-text">
-                <h2>One app for #Everything you need</h2>
-                <p>
-                Livin' by Gideon is more than just a banking and financial analyzing app. It is your daily tool to navigate and manage your daily expenditure, your financial statements and aids in facilitating a fast and smart investment. Access easy lifestyle and essential services at it perks with just a click.  
-                </p>
-                <p>With Livin' Mobile Banking, you're always in control of your finances. Download the app today and experience the future of banking! <br><button>Download App</button>
-                </p>
-                <ul>
+                <h2 class="sukha-headline">One app for #Everything you need</h2>
+                <p class="sukha-desc1">Livin' by Gideon is more than just a banking and financial analyzing app. It is your daily tool to navigate and manage your daily expenditure, your financial statements and aids in facilitating a fast and smart investment. Access easy lifestyle and essential services at it perks with just a click.</p>
+                <p class="sukha-desc2">With Livin' Mobile Banking, you're always in control of your finances. Download the app today and experience the future of banking! <br><button class="sukha-download">Download App</button></p>
+                <ul class="sukha-features">
                     <li>Log in with your credentials</li>
-                    <li>Explore our features and start managng your finances with ease</li>
+                    <li>Explore our features and start managing your finances with ease</li>
                 </ul>
-                <button>Creat Account</button>
-                <button>Login to Account</button>
+                <button class="sukha-create">Create Account</button>
+                <button class="sukha-login">Login to Account</button>
             </div>
         </section>
-        <section class="BENEFIT">
+        <section class="BENEFIT" id="Benefit">
             <div class="benefits-main">
                 <div class="benefit-logo">
                     <img src="icons8-mastercard-48.png" alt="Mastercard">
@@ -78,36 +80,36 @@
                 </div>
                 <div class="runner-container">
                     <div class="run-1">
-                        <h3>Esteem Users! <br>Get your account registered with <span class="hash-tag">#</span>Livin' beyond Banking</h3>
+                        <h3 class="benefit-run1">Esteem Users! <br>Get your account registered with <span class="hash-tag">#</span>Livin' beyond Banking</h3>
                     </div>
                     <div class="run-2">
-                        <h3>Enjoy seamless banking experience with <span class="hash-tag">#</span>Livin'</h3>
+                        <h3 class="benefit-run2">Enjoy seamless banking experience with <span class="hash-tag">#</span>Livin'</h3>
                     </div>
                 <div class="App-logo">
-                    <img src="icons8-mobile-banking-64.png" alt="mobile-banking" width="100px">
-                    <button>Get started</button>
-                <div>
+                    <img src="icons8-mobile-banking-64.png" alt="mobile-banking icon" width="100px">
+                    <button class="benefit-getstarted">Get started</button>
+                </div>
             </div> 
         </section>
 
-        <section class="Support">
+        <section class="Support" id="Support">
             <div class="Support-div">
                 <div class="question">
-                    <h2>Got Questions? We've got Answers</h2>
-                    <h3>Need help? Contact our customer support team for assistance.</h3>
-                    <p>Livin' your everyday tool to manage finances, invest smarter, enjoy lifestyle perks and access essential services with just a few tips.</p>
-                    <P>We're just a click away</P>
-                    <button>Get help</button>
+                    <h2 class="support-headline">Got Questions? We've got Answers</h2>
+                    <h3 class="support-sub">Need help? Contact our customer support team for assistance.</h3>
+                    <p class="support-desc1">Livin' your everyday tool to manage finances, invest smarter, enjoy lifestyle perks and access essential services with just a few tips.</p>
+                    <p class="support-desc2">We're just a click away</p>
+                    <button class="support-help">Get help</button>
                 </div>
                 <div class="Support-img">
-                    <img src="banking layout.jpg" alt="" width="400px">
+                    <img src="banking layout.jpg" alt="Customer support illustration" width="270px">
                 </div>
             </div>
             <div class="Help">
                 <div>
-                    <p class="Title">How do I start investing through Livin'?</p>
-                    <p class="Help discription">it's your everyday tool to manage finances,invest smarter, enjoy life at its perks and access essential service with a few tips.</p>
-                    <ul>
+                    <p class="help-title">How do I start investing through Livin'?</p>
+                    <p class="help-desc">it's your everyday tool to manage finances,invest smarter, enjoy life at its perks and access essential service with a few tips.</p>
+                    <ul class="help-list">
                         <li>Verification issue <strong>+</strong></li>
                         <li>Verification issue <strong>+</strong></li>
                         <li>Verification issue <strong>+</strong></li>
@@ -117,35 +119,36 @@
                 </div>
             </div>
             <div>
-                <h2>Security</h2>
-                <p>Your security is our top priority. We use advance encryption and data security measures to protect your data.</p>
+                <h2 class="security-headline">Security</h2>
+                <p class="security-desc">Your security is our top priority. We use advance encryption and data security measures to protect your data.</p>
             </div>
-            <div class="Conclution">
-                <h2 class="ready"> Terms & Conditions</h2>
-                <p>By using Livin' Mobile Banking, you agree to our terms and conditions. </p>
-                <img src="Data chrt.jpg" alt="">
+            <div class="Conclusion">
+                <h2 class="conclusion-headline ready"> Terms & Conditions</h2>
+                <p class="conclusion-desc">By using Livin' Mobile Banking, you agree to our terms and conditions. </p>
+                <img src="Data chart.jpg" alt="Data security chart" width="300px">
             </div>
             <div class="App-logo">
                 <p>
-                    <button>Download Here</button>
+                    <button class="conclusion-download">Download Here</button>
                 </p>
-                <img src="icons8-app-store-48.png" alt="" >
-                <img src="icons8-play-store-48.png" alt="">
+                <img src="icons8-app-store-48.png" alt="App Store" >
+                <img src="icons8-play-store-48.png" alt="Google Play Store">
             </div>
         </section>
     </main>
     <footer>
     <div class="footer flex-row">
         <div>
-            <h3 class="logo">Livin' your reliable online banking</h3>
+            <h3 class="footer-headline logo">Livin' your reliable online banking</h3>
         </div>
         <div class="footer-grid">
             <div class="sitemap">
                 <ul>
+                    <li><a href="#">Home</a></li>
                     <li><a href="#">Features</a></li>
                     <li><a href="#">Sukha</a></li>
                     <li><a href="#">Benefit</a></li>
-                    <li><a href="#">Support</a></li>
+                    <li><a href="#livin.html">Support</a></li>
                 </ul>
             </div>
             <div class="Contact">
@@ -154,33 +157,39 @@
                         <svg width="30" height="30" viewBox="0 0 24 24" fill="#00d084" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
                             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
                         </svg>
+                        <a href="https://www.google.com/maps/place/Minna,+Niger+State,+Nigeria" target="_blank" rel="noopener" style=" text-decoration:underline;" hover:color: var(--primary-color);>
+                            Minna, Niger State Nigeria
+                        </a>                    
                     </span>
-                    Minna, Niger State Nigeria
+                    <br>
+                        
                 </address>
             </div>
             <div class="Subscribe">
-                <h3>Sign up for our online banking</h3>
+                <h3 class="subscribe-headline">Sign up for our online banking</h3>
                 <form action="https://formspree.io/f/xovnakry" method="POST">
                     <div class="input">
                         <input type="email" name="email" placeholder="email@Livin'" required>
                         <button type="submit">Subscribe</button>
                         <p>By subscribing, you will agree to our terms & condition, policy and privacy.</p>
+                        <p class="subscribe-desc">By subscribing, you will agree to our terms & condition, policy and privacy.</p>
                     </div>
                 </form>
             </div>
             <div class="Social">
-                <ul>
-                    <li>Secure Banking Guarantee</li>
-                    <li>FDIC/NCUA Insured</li>
-                    <li>Regulatory Compliance Information</li>
+                <ul class="social-list">
+                    <li class="social-guarantee">Secure Banking Guarantee</li>
+                    <li class="social-insured">FDIC/NCUA Insured</li>
+                    <li class="social-compliance">Regulatory Compliance Information</li>
                 </ul>
             </div>
         </div>
         <div class="copyright flex-row">
-            <p>Copyright @2025 Livin' Mobile Banking. All rights reserved.</p>
-            <img src="icons8-mobile-email-50.png" alt="">
+            
+            <p class="copyright-desc"><img src="icons8-mobile-email-50.png" alt=""> Copyright @2025 Livin' Mobile Banking. All rights reserved.</p>
         </div>
     </div>
 </footer>
 </body>
+<script src="script.js" defer></script>
 </html>
