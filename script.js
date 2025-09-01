@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             box.style.opacity = '1';
         }
     });
-
+});
     // Navigation toggle for mobile
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.querySelector('.navigation ul');
@@ -29,12 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.toggle('active');
         });
 
-        const menuToggleButton = document.querySelector('#menu-toggle');
-        if (menuToggleButton) {
-            menuToggleButton.addEventListener('click', () => {
-                console.log('Menu toggle button clicked!');
-            });
-        }
+    const menuToggleButton = document.querySelector('#menu-toggle');
+    if (menuToggleButton) {
+        menuToggleButton.addEventListener('click', () => {
+            console.log('Menu toggle button clicked!');
+        });
+    }
     }
 
     // Animate sections on scroll
@@ -392,36 +392,53 @@ zh: {
             const socialCompliance = document.querySelector('footer .social-links li:nth-of-type(3)');
         if (socialCompliance) socialCompliance.textContent = t.social_compliance;   
             const copyrightDesc = document.querySelector('footer .copyright p');
-        if (copyrightDesc) copyrightDesc.textContent = t.copyright_desc;    
-
-        const trusted = document.querySelector('.trusted');
-        if (trusted) trusted.innerHTML = t.trusted;
-            const headline = document.querySelector('header h1');
-        if (headline) headline.innerHTML = t.headline;
-            const discover = document.querySelector('.discover p');
-        if (discover) discover.textContent = t.discover;
+        if (copyrightDesc) copyrightDesc.textContent = t.copyright_desc;
+            // Update trusted section
+        const trustedSection = document.querySelector('.trusted');  
+        if (trustedSection) {
+            trustedSection.innerHTML = t.trusted;
+        }   
+            // Update headline section
+        const headlineSection = document.querySelector('.headline h1'); 
+        if (headlineSection) {
+            headlineSection.innerHTML = t.headline;
+        }   
+            // Update discover section
+        const discoverSection = document.querySelector('.discover p');  
+        if (discoverSection) {
+            discoverSection.textContent = t.discover;
+        }   
             const featuresList = document.querySelector('.discover ul');
-        });    
+        if (featuresList) {
+            featuresList.innerHTML = '';    
+            t.features.forEach(f => {
+                const li = document.createElement('li');
+                li.textContent = f;
+                featuresList.appendChild(li);
+    });
+        }
 
     if (langBtn && langList) {
         langBtn.addEventListener('click', () => {
-            langList.style.display = langList.style.display === 'block' ? 'none' : 'block';
-        });
-
+            langList.classList.toggle('show');
+        }); 
         langList.addEventListener('click', (e) => {
-            if (e.target.tagName === 'BUTTON') {
+            if (e.target.tagName === 'LI') {
                 const selectedLang = e.target.getAttribute('data-lang');
-                const t = translations[selectedLang] || translations['en'];
-                // your update logic...
-            }
-        });
-
-        // Optional: close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!langBtn.contains(e.target) && !langList.contains(e.target)) {
-                langList.style.display = 'none';
+                if (translations[selectedLang]) {
+                    const t = translations[selectedLang];
+                    // Update all text content based on selected language
+                    // (The code to update text content is already provided above)
+                }
+                langList.classList.remove('show');
+                langBtn.textContent = e.target.textContent;
             }
         });
     }
-        const t = translations[selectedLang] || translations['en'];
-});
+
+    // Close language dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!langBtn.contains(e.target) && !langList.contains(e.target)) {
+            langList.classList.remove('show');
+        }
+    });
