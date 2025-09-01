@@ -553,6 +553,7 @@ section:nth-of-type(4) { animation-delay: 0.8s; }
   min-width: 120px;
   z-index: 1002;
   padding: 0.5rem 0;
+  display: none;
 }
 .language-list li button {
   background: none;
@@ -565,4 +566,8 @@ section:nth-of-type(4) { animation-delay: 0.8s; }
 }
 .language-list li button:hover {
   background: #f0f0f0;
+}
+
+.language-list.show {
+  display: block;
 }

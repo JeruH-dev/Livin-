@@ -55,18 +55,6 @@ revealSection();
 const langBtn = document.getElementById('language-btn');
 const langList = document.getElementById('language-list');
 
-// Function to change the language
-function changeLanguage(lang) {
-    if (translations[lang]) {
-        Object.keys(translations[lang]).forEach(key => {
-            const elements = document.querySelectorAll(`[data-translate="${key}"]`);
-            elements.forEach(element => {
-                element.innerHTML = translations[lang][key];
-            });
-        });
-    }
-}
-
 const translations = {
     en: {
         trusted: 'Trusted by over <span class="million">20 million Africans</span>',
@@ -337,18 +325,18 @@ function applyTranslation(selectedLang) {
         }
         
         // Update headline section
-        const headlineSection = document.querySelector('.headline h1');
+        const headlineSection = document.querySelector('.headline');
         if (headlineSection) {
             headlineSection.innerHTML = t.headline;
         }
         
         // Update discover section
-        const discoverSection = document.querySelector('.discover p');
+        const discoverSection = document.querySelector('.Discover');
         if (discoverSection) {
             discoverSection.textContent = t.discover;
         }
         
-        const featuresList = document.querySelector('.discover ul');
+        const featuresList = document.querySelector('.features-list');
         if (featuresList) {
             featuresList.innerHTML = '';
             t.features.forEach(f => {
@@ -359,16 +347,16 @@ function applyTranslation(selectedLang) {
         }
 
         // Update sukha section
-        const sukhaHeadline = document.querySelector('.sukha-content h2');
+        const sukhaHeadline = document.querySelector('.sukha-headline');
         if (sukhaHeadline) sukhaHeadline.textContent = t.sukha_headline;
         
-        const sukhaDesc1 = document.querySelector('.sukha-content p:nth-of-type(1)');
+        const sukhaDesc1 = document.querySelector('.sukha-desc1');
         if (sukhaDesc1) sukhaDesc1.textContent = t.sukha_desc1;
         
-        const sukhaDesc2 = document.querySelector('.sukha-content p:nth-of-type(2)');
+        const sukhaDesc2 = document.querySelector('.sukha-desc2');
         if (sukhaDesc2) sukhaDesc2.textContent = t.sukha_desc2;
         
-        const sukhaFeaturesList = document.querySelector('.sukha-content ul');
+        const sukhaFeaturesList = document.querySelector('.sukha-features');
         if (sukhaFeaturesList) {
             sukhaFeaturesList.innerHTML = '';
             t.sukha_features.forEach(f => {
@@ -378,49 +366,49 @@ function applyTranslation(selectedLang) {
             });
         }
         
-        const sukhaDownloadBtn = document.querySelector('.sukha-buttons .download-btn');
+        const sukhaDownloadBtn = document.querySelector('.sukha-download');
         if (sukhaDownloadBtn) sukhaDownloadBtn.textContent = t.sukha_download;
         
-        const sukhaCreateBtn = document.querySelector('.sukha-buttons .create-btn');
+        const sukhaCreateBtn = document.querySelector('.sukha-create');
         if (sukhaCreateBtn) sukhaCreateBtn.textContent = t.sukha_create;
         
-        const sukhaLoginBtn = document.querySelector('.sukha-buttons .login-btn');
+        const sukhaLoginBtn = document.querySelector('.sukha-login');
         if (sukhaLoginBtn) sukhaLoginBtn.textContent = t.sukha_login;
         
         // Update benefit section
-        const benefitRun1 = document.querySelector('.benefit-run p:nth-of-type(1)');
+        const benefitRun1 = document.querySelector('.benefit-run1');
         if (benefitRun1) benefitRun1.innerHTML = t.benefit_run1;
         
-        const benefitRun2 = document.querySelector('.benefit-run p:nth-of-type(2)');
+        const benefitRun2 = document.querySelector('.benefit-run2');
         if (benefitRun2) benefitRun2.innerHTML = t.benefit_run2;
         
-        const benefitGetStartedBtn = document.querySelector('.benefit-run .get-started-btn');
+        const benefitGetStartedBtn = document.querySelector('.benefit-getstarted');
         if (benefitGetStartedBtn) benefitGetStartedBtn.textContent = t.benefit_getstarted;
         
         // Update support section
-        const supportHeadline = document.querySelector('.support-content h2');
+        const supportHeadline = document.querySelector('.support-headline');
         if (supportHeadline) supportHeadline.textContent = t.support_headline;
         
-        const supportSub = document.querySelector('.support-content .sub');
+        const supportSub = document.querySelector('.support-sub');
         if (supportSub) supportSub.textContent = t.support_sub;
         
-        const supportDesc1 = document.querySelector('.support-content p:nth-of-type(1)');
+        const supportDesc1 = document.querySelector('.support-desc1');
         if (supportDesc1) supportDesc1.textContent = t.support_desc1;
         
-        const supportDesc2 = document.querySelector('.support-content p:nth-of-type(2)');
+        const supportDesc2 = document.querySelector('.support-desc2');
         if (supportDesc2) supportDesc2.textContent = t.support_desc2;
         
-        const supportHelpBtn = document.querySelector('.support-content .help-btn');
+        const supportHelpBtn = document.querySelector('.support-help');
         if (supportHelpBtn) supportHelpBtn.textContent = t.support_help;
         
         // Update help section
-        const helpTitle = document.querySelector('.help-section h3');
+        const helpTitle = document.querySelector('.help-title');
         if (helpTitle) helpTitle.textContent = t.help_title;
         
-        const helpDesc = document.querySelector('.help-section p');
+        const helpDesc = document.querySelector('.help-desc');
         if (helpDesc) helpDesc.textContent = t.help_desc;
         
-        const helpList = document.querySelector('.help-section ul');
+        const helpList = document.querySelector('.help-list');
         if (helpList) {
             helpList.innerHTML = '';
             t.help_list.forEach(item => {
@@ -431,60 +419,69 @@ function applyTranslation(selectedLang) {
         }
         
         // Update security section
-        const securityHeadline = document.querySelector('.security-section h3');
+        const securityHeadline = document.querySelector('.security-headline');
         if (securityHeadline) securityHeadline.textContent = t.security_headline;
         
-        const securityDesc = document.querySelector('.security-section p');
+        const securityDesc = document.querySelector('.security-desc');
         if (securityDesc) securityDesc.textContent = t.security_desc;
         
         // Update conclusion section
-        const conclusionHeadline = document.querySelector('.conclusion-section h3');
+        const conclusionHeadline = document.querySelector('.conclusion-headline');
         if (conclusionHeadline) conclusionHeadline.textContent = t.conclusion_headline;
         
-        const conclusionDesc = document.querySelector('.conclusion-section p');
+        const conclusionDesc = document.querySelector('.conclusion-desc');
         if (conclusionDesc) conclusionDesc.textContent = t.conclusion_desc;
         
-        const conclusionDownloadBtn = document.querySelector('.conclusion-section .download-btn');
+        const conclusionDownloadBtn = document.querySelector('.conclusion-download');
         if (conclusionDownloadBtn) conclusionDownloadBtn.textContent = t.conclusion_download;
         
         // Update footer section
-        const footerHeadline = document.querySelector('footer h2');
+        const footerHeadline = document.querySelector('.footer-headline');
         if (footerHeadline) footerHeadline.textContent = t.footer_headline;
         
-        const subscribeHeadline = document.querySelector('footer .subscribe h3');
+        const subscribeHeadline = document.querySelector('.subscribe-headline');
         if (subscribeHeadline) subscribeHeadline.textContent = t.subscribe_headline;
         
-        const subscribeDesc = document.querySelector('footer .subscribe p');
+        const subscribeDesc = document.querySelector('.subscribe-desc');
         if (subscribeDesc) subscribeDesc.textContent = t.subscribe_desc;
         
-        const socialGuarantee = document.querySelector('footer .social-links li:nth-of-type(1)');
+        const socialGuarantee = document.querySelector('.social-guarantee');
         if (socialGuarantee) socialGuarantee.textContent = t.social_guarantee;
         
-        const socialInsured = document.querySelector('footer .social-links li:nth-of-type(2)');
+        const socialInsured = document.querySelector('.social-insured');
         if (socialInsured) socialInsured.textContent = t.social_insured;
         
-        const socialCompliance = document.querySelector('footer .social-links li:nth-of-type(3)');
+        const socialCompliance = document.querySelector('.social-compliance');
         if (socialCompliance) socialCompliance.textContent = t.social_compliance;
         
-        const copyrightDesc = document.querySelector('footer .copyright p');
+        const copyrightDesc = document.querySelector('.copyright-desc');
         if (copyrightDesc) copyrightDesc.textContent = t.copyright_desc;
     }
 }
 
 // Language selection event handlers
 if (langBtn && langList) {
+    console.log('Language elements found:', { langBtn, langList });
+    
     langBtn.addEventListener('click', () => {
+        console.log('Language button clicked');
         langList.classList.toggle('show');
     });
     
-        langList.addEventListener('click', (e) => {
-        if (e.target.tagName === 'LI') {
+    langList.addEventListener('click', (e) => {
+        console.log('Language list clicked:', e.target);
+        if (e.target.tagName === 'BUTTON') {
             const selectedLang = e.target.getAttribute('data-lang');
+            console.log('Selected language:', selectedLang);
             applyTranslation(selectedLang);
             langList.classList.remove('show');
-            langBtn.textContent = e.target.textContent;
+            // Update button text to show language code
+            const langCodes = { en: 'EN', fr: 'FR', es: 'ES', de: 'DE', zh: '中文' };
+            langBtn.textContent = langCodes[selectedLang] + ' ▼';
         }
     });
+} else {
+    console.error('Language elements not found:', { langBtn, langList });
 }
 
 // Close language dropdown when clicking outside
